@@ -67,16 +67,16 @@ class ProgrammingLanguages(Enum):
     @staticmethod
     def get_programming_language(programming_lang):
         programming_lang = programming_lang.lower()
-        for e in ProgrammingLanguages:
-            if programming_lang == "python3":
-                return ProgrammingLanguages.PYTHON3
+        if programming_lang == "python3":
+            return ProgrammingLanguages.PYTHON3
 
-            if programming_lang == "python":
-                return ProgrammingLanguages.PYTHON
+        if programming_lang == "python":
+            return ProgrammingLanguages.PYTHON
 
-            if programming_lang == "racket":
-                return ProgrammingLanguages.RACKET
+        if programming_lang == "racket":
+            return ProgrammingLanguages.RACKET
 
+        return ProgrammingLanguages.PYTHON3
 
 if __name__=="__main__":
      data = ProgrammingLanguages.get_programming_language("python")

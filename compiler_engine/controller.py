@@ -17,7 +17,7 @@ def compile_code():
         abort(400)
 
     code = request.json["code"]
-    program_type = ProgrammingLanguages.get_programming_language(request.json["type"])
+    program_type = ProgrammingLanguages.get_programming_language(str(request.json["type"]))
     logging.info("The code to be excuted is "+code)
     return CompilerEngine(code,program_type).compile_program()
 
